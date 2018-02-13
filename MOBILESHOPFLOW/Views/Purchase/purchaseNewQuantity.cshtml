@@ -1,0 +1,91 @@
+﻿@model MOBILESHOPFLOW.Models.TblPurchase
+
+@{
+    ViewData["Title"] = "purchaseNewQuantity";
+}
+
+<h2>Purchase New Item</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="purchaseNewQuantity">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+          
+         
+            
+            <div class="form-group">
+<<<<<<< HEAD
+                <label asp-for="ItemId" class="control-label">Item Name</label>
+=======
+                <label asp-for="ItemId" class="control-label"></label>
+>>>>>>> 1f469b961d7db5815e8fafb2b87cdccf442cca9c
+                <select asp-for="ItemId" asp-items="@ViewBag.ItemId" class="form-control"></select>
+                <span asp-validation-for="ItemId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+<<<<<<< HEAD
+                <label asp-for="VendorId" class="control-label">Vendor Name</label>
+=======
+                <label asp-for="VendorId" class="control-label"></label>
+>>>>>>> 1f469b961d7db5815e8fafb2b87cdccf442cca9c
+                <select asp-for="VendorId" asp-items="@ViewBag.VendorId" class="form-control" ></select>
+                <span asp-validation-for="VendorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+<<<<<<< HEAD
+                <label asp-for="CatagoryId" class="control-label">Catagory</label>
+                <select asp-for="CatagoryId" asp-items="@ViewBag.CatagoryId" class="form-control"></select>
+                <span asp-validation-for="CatagoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PricePerUnit" class="control-label"></label>
+                <input asp-for="PricePerUnit" class="form-control" />
+                <span asp-validation-for="PricePerUnit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalPrice" class="control-label"></label>
+                <input asp-for="TotalPrice" class="form-control" />
+                <span asp-validation-for="TotalPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateTime" class="control-label"></label>
+                <input asp-for="DateTime" class="form-control" />
+                <span asp-validation-for="DateTime" class="text-danger"></span>
+=======
+                <label asp-for="CatagoryId" class="control-label"></label>
+                <select asp-for="CatagoryId" asp-items="@ViewBag.CatagoryId" class="form-control"></select>
+                <span asp-validation-for="CatagoryId" class="text-danger"></span>
+>>>>>>> 1f469b961d7db5815e8fafb2b87cdccf442cca9c
+            </div>
+            <div class="form-group">
+                <label asp-for="PricePerUnit" class="control-label"></label>
+                <input asp-for="PricePerUnit" class="form-control" />
+                <span asp-validation-for="PricePerUnit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalPrice" class="control-label"></label>
+                <input asp-for="TotalPrice" class="form-control" />
+                <span asp-validation-for="TotalPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataTime" class="control-label"></label>
+                <input asp-for="DataTime" class="form-control" />
+                <span asp-validation-for="DataTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

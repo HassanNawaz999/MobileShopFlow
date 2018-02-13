@@ -1,0 +1,62 @@
+﻿@model IEnumerable<MOBILESHOPFLOW.Models.TblVendor>
+
+@{
+    ViewData["Title"] = "viewAllVendors";
+}
+
+<h2>List Of Vendors<span class="badge-danger" id="Carscounter"></span></h2>
+<div id="ad">
+
+</div>
+<p>
+    <a href="/vendors/addVendor">Add New</a>
+</p>
+<form method="post">
+    <table class="table table-responsive" id="tblAllVendors" name="tblAllVendors">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (TblVendor tv in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(model => tv.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => tv.Phone)
+                    </td>
+
+                    <td>
+                        <a href="/Vendors/removeVendor?VendorId=@tv.VendorId" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a>
+                        <a href="/Vendors/vendorDetails?vNum=@tv.VendorId" class="btn btn-success btn-xs"><span class="glyphicon-eye-open">Details</span></a>
+                        <a href="/Vendors/editVendor?vid=@tv.VendorId" class="btn btn-success btn-xs"><span class="glyphicon-pencil">Edit</span></a>
+
+                        @*  <a href="#" class="btn btn-danger dlt" data-id="@tc.EngineNo">Delete Ajax</a>*@
+
+
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>
+@section Scripts
+    {
+    <script>
+        $(document).ready(function () {
+            $('#tblAllVendors').DataTable();
+        });
+
+    </script>
+}

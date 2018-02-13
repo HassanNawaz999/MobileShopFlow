@@ -1,0 +1,56 @@
+﻿@model IEnumerable<MOBILESHOPFLOW.Models.TblCatagories>
+
+
+<h2>ViewAllCatagories<span class="badge-danger" id="Carscounter"></span></h2>
+<div id="ad">
+
+</div>
+<p>
+    <a href="/catagories/catagories">Add New</a>
+</p>
+<table class="table table-responsive" id="tblCatagories" name="tblCatagories">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CatagoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (TblCatagories tc in Model)
+        {
+            <tr>
+               
+                <td>
+                    @Html.DisplayFor(model => tc.CatagoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => tc.Model)
+                </td>
+                <td>
+                    <a href="/Catagories/removeCatagory?CatagoryId=@tc.CatagoryId" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a>
+                  <a href="/Catagories/CatagoryDetails?cnum=@tc.CatagoryId" class="btn btn-success btn-xs"><span class="glyphicon-eye-open">Details</span></a>
+                  <a href="/Catagories/EditCatagory?cid=@tc.CatagoryId" class="btn btn-success btn-xs"><span class="glyphicon-pencil">Edit</span></a>
+
+   @*<a href="#" class="btn btn-danger dlt" data-id="@tc.EngineNo">Delete Ajax</a>*@
+
+                 
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#tblCatagories').DataTable();
+        });
+    </script>
+
+}

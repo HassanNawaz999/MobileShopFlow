@@ -1,0 +1,89 @@
+﻿@model IEnumerable< MOBILESHOPFLOW.Models.TblPurchase>
+
+@{
+        ViewData["Title"] = "purchaseHistory";
+    }
+
+<h2>Purchase History</h2>
+
+<p>
+    <a href="/purchase/purchaseNewQuantity">Add New</a>
+</p>
+<table class="table table-responsive" id="tblallItems" name="tblCatagories">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VendorId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ItemId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CatagoryId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PricePerUnit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPrice)
+            </th>
+            <th>
+<<<<<<< HEAD
+                @Html.DisplayNameFor(model => model.DateTime)
+=======
+                @Html.DisplayNameFor(model => model.DataTime)
+>>>>>>> 1f469b961d7db5815e8fafb2b87cdccf442cca9c
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (TblPurchase tp in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(model => tp.VendorId)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => tp.ItemId)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => tp.CatagoryId)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => tp.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => tp.PricePerUnit)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => tp.TotalPrice)
+                </td>
+                <td>
+<<<<<<< HEAD
+                    @Html.DisplayFor(model => tp.DateTime)
+=======
+                    @Html.DisplayFor(model => tp.DataTime)
+>>>>>>> 1f469b961d7db5815e8fafb2b87cdccf442cca9c
+                </td>
+                <td>
+
+                    <a href="/items/removeItem?ItemId=@tp.PurchaseId" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a>
+                    <a href="/items/itemDetails?id=@tp.PurchaseId" class="btn btn-success btn-xs"><span class="glyphicon-eye-open">Details</span></a>
+                    <a href="/items/EditView" class="btn btn-success btn-xs"><span class="glyphicon-pencil">Edit</span></a>
+
+                    @*  <a href="#" class="btn btn-danger dlt" data-id="@tc.EngineNo">Delete Ajax</a>*@
+
+
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

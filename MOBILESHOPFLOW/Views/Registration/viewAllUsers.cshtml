@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MOBILESHOPFLOW.Models.tblUser>
+
+@{
+    ViewData["Title"] = "viewAllUsers";
+}
+<h2>List Of Users<span class="badge-danger" id="Carscounter"></span></h2>
+<div id="ad">
+
+</div>
+<p>
+    <a href="/registration/register">Create New</a>
+</p>
+<table class="table table-responsive" id="tblallItems" name="tblCatagories">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.role)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (tblUser tr in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(model => tr.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => tr.password)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => tr.role)
+                </td>
+              
+                <td>
+                    <a href="/Registration/removeUser?userId=@tr.userId" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Delete</a>
+                    <a href="/Registration/userDetails?uNum=@tr.userId" class="btn btn-success btn-xs"><span class="glyphicon-eye-open">Details</span></a>
+                    <a href="/DataBase/EditView" class="btn btn-success btn-xs"><span class="glyphicon-pencil">Edit</span></a>
+
+                    @*  <a href="#" class="btn btn-danger dlt" data-id="@tc.EngineNo">Delete Ajax</a>*@
+
+
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
