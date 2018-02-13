@@ -52,7 +52,7 @@ namespace MOBILESHOPFLOW.Controllers
             return RedirectToAction(nameof(CustomerController.viewAllCustomers));   
             
         }
-        //FUNTION FOR EDIT Cusotmer
+        //FUNTION FOR EDIT Cusotmer here
         [HttpGet]
         public IActionResult EditCustomer(int cid)
         {
